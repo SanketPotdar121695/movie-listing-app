@@ -1,9 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const PORT = process.env.PORT || 8080;
-const secretKey1 = process.env.secretKey1;
-const secretKey2 = process.env.secretKey2;
+const { PORT, secretKey1, secretKey2, client_baseURL } = process.env;
 
 const connection = async () => {
   try {
@@ -15,4 +13,10 @@ const connection = async () => {
   console.log(`App is running on port ${PORT}`);
 };
 
-module.exports = { PORT, secretKey1, secretKey2, connection };
+module.exports = {
+  PORT,
+  connection,
+  secretKey1,
+  secretKey2,
+  client_baseURL
+};
