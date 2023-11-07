@@ -3,7 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const express = require('express');
 const { apiProxy } = require('./config/proxy');
-const { PORT, connection } = require('./config/db');
+const { PORT, connection, client_baseURL } = require('./config/db');
 
 // Creating a new server
 const app = express();
@@ -11,8 +11,7 @@ __dirname = path.resolve();
 
 // In-built middlewares
 app.use(express.static(path.join(__dirname, '/view/dist')));
-// app.use(cors({ origin: client_baseURL }));
-app.use(cors());
+app.use(cors({ origin: client_baseURL }));
 app.use(express.json());
 
 // Consuming the proxy middleware
