@@ -20,7 +20,10 @@ const MovieCard = ({
       className='flex flex-col justify-between items-center gap-4 w-64 h-[29rem] p-5 m-auto rounded-xl cursor-pointer text-white bg-slate-800 hover:bg-white hover:text-black'
       style={{ fontFamily: '"Montserrat", sans-serif' }}
       onClick={() => {
-        navigate(`/${media_type}/${id}}`);
+        navigate(`/${media_type}/${id}`, {
+          state: { data: location.pathname },
+          replace: true
+        });
       }}
     >
       <img
