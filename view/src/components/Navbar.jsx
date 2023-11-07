@@ -1,3 +1,4 @@
+import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import {
   Bars3Icon,
@@ -5,12 +6,12 @@ import {
   MagnifyingGlassIcon
 } from '@heroicons/react/24/outline';
 import logo from '../assets/MovieGuru_logo.png';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 let navigation = [
-  { name: 'Trending', href: '/trending' },
-  { name: 'Movies', href: '/movies' },
-  { name: 'TV Series', href: '/tv_series' }
+  { name: 'Trending', href: '/' },
+  { name: 'Movies', href: '/movie' },
+  { name: 'TV Series', href: '/tv' }
 ];
 
 function classNames(...classes) {
@@ -19,6 +20,13 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [query, setQuery] = React.useState('');
+  const [type, setType] = React.useState('movie');
+
+  const handleSearch = () => {
+    navigate(`/search/${type}?query=${query}`);
+  };
 
   return (
     <Disclosure as='nav' className='bg-gray-700 sticky top-0 z-50'>
@@ -41,7 +49,7 @@ export default function Navbar() {
 
               <div className='flex flex-1 items-center justify-start sm:items-stretch'>
                 <div className='flex flex-shrink-0 items-center'>
-                  <NavLink to='/'>
+                  <NavLink to='/' onClick={() => setQuery('')}>
                     <img
                       className='h-20 w-auto'
                       src={logo}
@@ -56,12 +64,16 @@ export default function Navbar() {
                       <NavLink
                         to={item.href}
                         key={item.name}
+                        onClick={() => setQuery('')}
                         className={classNames(
-                          item.href === location.pathname
+                          item.href === location.pathname ||
+                            (location.pathname === '/' &&
+                              item.name === 'Trending')
                             ? 'bg-gray-900 text-white'
                             : 'text-gray-300 hover:bg-gray-800 hover:text-white',
                           'rounded-md p-3 text-md font-medium'
                         )}
+                        end
                       >
                         {item.name}
                       </NavLink>
@@ -72,7 +84,7 @@ export default function Navbar() {
 
               <div className='relative rounded-md shadow-sm mx-14 xs:mr-24 md:mx-auto'>
                 <div className='absolute inset-y-0 left-0 flex items-center pl-3'>
-                  <button className='block h-full pr-2'>
+                  <button className='block h-full pr-2' onClick={handleSearch}>
                     <MagnifyingGlassIcon
                       className='block h-6 w-6 text-white/50 hover:text-white/100'
                       aria-hidden='true'
@@ -82,14 +94,19 @@ export default function Navbar() {
 
                 <input
                   type='text'
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
                   className='block w-full rounded-md border-0 outline-none bg-slate-800 py-2.5 pl-12 pr-28 text-white sm:text-sm sm:leading-6'
                   placeholder='Search movies/TV series'
                 />
 
                 <div className='absolute inset-y-0 right-2 flex items-center justify-center'>
-                  <select className='h-full rounded-md border-0 border-l border-sky-600 rounded-l-none place-items-center outline-none bg-slate-800 py-0 px-2 text-white sm:text-sm'>
-                    <option>Movies</option>
-                    <option>TV Series</option>
+                  <select
+                    onChange={(e) => setType(e.target.value)}
+                    className='h-full rounded-md border-0 border-l border-sky-600 rounded-l-none place-items-center outline-none bg-slate-800 py-0 px-2 text-white sm:text-sm'
+                  >
+                    <option value='movie'>Movies</option>
+                    <option value='tv'>TV Series</option>
                   </select>
                 </div>
               </div>
@@ -102,12 +119,14 @@ export default function Navbar() {
                 <NavLink
                   to={item.href}
                   key={item.name}
+                  onClick={() => setQuery('')}
                   className={classNames(
                     item.href === location.pathname
                       ? 'bg-gray-900 text-white'
                       : 'text-gray-300 hover:bg-gray-800 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
+                  end
                 >
                   <Disclosure.Button>{item.name}</Disclosure.Button>
                 </NavLink>

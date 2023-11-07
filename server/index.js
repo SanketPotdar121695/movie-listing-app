@@ -22,7 +22,7 @@ app.get('/api', (req, res) => {
   res
     .status(200)
     .send(
-      '<div style="text-align: center;"><h1>Welcome to the MovieGuru Database !!!</h1></div>'
+      '<div style="text-align: center; margin-top: 20px;"><h1>Welcome to the MovieGuru Database !!!</h1></div>'
     );
 });
 
