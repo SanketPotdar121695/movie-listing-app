@@ -3,7 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const express = require('express');
 const { apiProxy } = require('./config/proxy');
-const { PORT, connection, client_baseURL } = require('./config/db');
+const { PORT, connection } = require('./config/db');
 
 // Creating a new server
 const app = express();
