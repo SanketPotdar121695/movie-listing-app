@@ -58,7 +58,8 @@ const MovieList = () => {
   }, [location]);
 
   React.useEffect(() => {
-    setSearchParams({ page });
+    if (page > 1) setSearchParams({ page });
+    if (page < 1) searchParams.delete('page');
   }, [page]);
 
   if (loading) {
