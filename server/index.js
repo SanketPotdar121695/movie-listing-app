@@ -11,7 +11,8 @@ __dirname = path.resolve();
 
 // In-built middlewares
 app.use(express.static(path.join(__dirname, '/view/dist')));
-app.use(cors({ origin: client_baseURL }));
+// app.use(cors({ origin: client_baseURL }));
+app.use(cors());
 app.use(express.json());
 
 // Consuming the proxy middleware
