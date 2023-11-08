@@ -110,12 +110,10 @@ http://frontend_url:port/api
 
 ## Screenshots
 
-![homepage](view/src/assets/home_page.png)
-
 <div align="center">
   <h3>Home Page</h3>
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/home_page.png?raw=true" width="800">
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/home_page(1).png?raw=true" width="800">
+  <img src="./view/src/assets/home_page(1).png" alt="homepage_1" width="800">
+  <img src="./view/src/assets/home_page(2).png" alt="homepage_2" width="800">
 </div>
 
 <div align="center">
