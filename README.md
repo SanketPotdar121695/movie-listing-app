@@ -110,7 +110,7 @@ http://frontend_url:port/api
 
 ## Screenshots
 
-![homepage](https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/home_page.png?raw=true)
+![homepage](https://github.com/sanketpotdar121695/movie-listing-app/blob/master/view/src/assets/home_page.png?raw=true)
 
 <div align="center">
   <h3>Home Page</h3>
