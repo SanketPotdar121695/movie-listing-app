@@ -112,18 +112,18 @@ http://frontend_url:port/api
 
 <div align="center">
   <h3>Home Page</h3>
-  <img src="./view/src/assets/home_page(1).png" alt="homepage_1" width="800">
-  <img src="./view/src/assets/home_page(2).png" alt="homepage_2" width="800">
+  <img src="./view/src/assets/home_page(1).jpg" alt="homepage_1" width="800">
+  <img src="./view/src/assets/home_page(2).jpg" alt="homepage_2" width="800">
 </div>
 
 <div align="center">
   <h3>Movie Details Page</h3>
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/movie_details.png?raw=true" width="800">
+  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/movie_details.jpg?raw=true" width="800">
 </div>
 
 <div align="center">
   <h3>Search Results</h3>
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/search_results.png?raw=true" width="800">
+  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/search_results.jpg?raw=true" width="800">
 </div>
 
 ## Demo
