@@ -110,22 +110,22 @@ http://frontend_url:port/api
 
 ## Screenshots
 
-![homepage](https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/home_page.png?raw=true)
+![homepage](https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/home_page.png?raw=true)
 
 <div align="center">
   <h3>Home Page</h3>
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/home_page.png?raw=true" width="800">
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/home_page(1).png?raw=true" width="800">
+  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/home_page.png?raw=true" width="800">
+  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/home_page(1).png?raw=true" width="800">
 </div>
 
 <div align="center">
   <h3>Movie Details Page</h3>
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/movie_details.png?raw=true" width="800">
+  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/movie_details.png?raw=true" width="800">
 </div>
 
 <div align="center">
   <h3>Search Results</h3>
-  <img src="https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/search_results.png?raw=true" width="800">
+  <img src="https://github.com/SanketPotdar121695/movie-listing-app/blob/master/view/src/assets/search_results.png?raw=true" width="800">
 </div>
 
 ## Demo
