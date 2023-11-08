@@ -110,9 +110,10 @@ http://frontend_url:port/api
 
 ## Screenshots
 
+![homepage](https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/home_page.png?raw=true)
+
 <div align="center">
   <h3>Home Page</h3>
-  ![homepage](https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/home_page.png?raw=true)
   <img src="https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/home_page.png?raw=true" width="800">
   <img src="https://github.com/SanketPotdar121695/movie-listing-app/tree/master/view/src/assets/home_page(1).png?raw=true" width="800">
 </div>
