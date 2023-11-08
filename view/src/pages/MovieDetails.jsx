@@ -15,8 +15,6 @@ const MovieDetails = () => {
   const [details, setDetails] = React.useState({});
   const [loading, setLoading] = React.useState(false);
 
-  console.log(details);
-
   const getData = async () => {
     try {
       setLoading(true);

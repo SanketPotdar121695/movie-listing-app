@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { img_300, unavailable } from '../utils/images';
 
 const MovieCard = ({
@@ -14,17 +14,34 @@ const MovieCard = ({
   first_air_date
 }) => {
   const navigate = useNavigate();
+  const { pathname, search } = useLocation();
+
+  const handleRedirection = () => {
+    if (pathname === '/') {
+      return navigate(`/${media_type}/${id}`, {
+        state: { data: pathname },
+        replace: true
+      });
+    } else if (pathname === '/movie' || pathname === '/tv') {
+      return navigate(`${pathname}/${id}`, {
+        state: { data: pathname },
+        replace: true
+      });
+    } else {
+      let actualPath = pathname.split(/[\/?]/, 3);
+
+      return navigate(`/${actualPath[2]}/${id}`, {
+        state: { data: `${pathname}${search}` },
+        replace: true
+      });
+    }
+  };
 
   return (
     <div
-      className='flex flex-col justify-between items-center gap-4 w-64 h-[29rem] p-5 m-auto rounded-xl cursor-pointer text-white bg-slate-800 hover:bg-white hover:text-black'
+      className='flex flex-col justify-between items-center gap-4 w-64 h-[30rem] p-5 m-auto rounded-xl cursor-pointer text-white bg-slate-800 hover:bg-white hover:text-black'
       style={{ fontFamily: '"Montserrat", sans-serif' }}
-      onClick={() => {
-        navigate(`/${media_type}/${id}`, {
-          state: { data: location.pathname },
-          replace: true
-        });
-      }}
+      onClick={handleRedirection}
     >
       <img
         src={poster_path ? `${img_300}${poster_path}` : unavailable}
